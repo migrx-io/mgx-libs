@@ -1,0 +1,32 @@
+{
+    "active": 1,
+    "entry_ppool": "dr",
+    "name": "mgx-plgn-dr",
+    "priority": 0,
+    "scenes": [
+        {
+            "cook": [
+                {
+                    "cmd": "system::local::start_pool::cmd-exec::1",
+                    "num": 1
+                },
+                {
+                    "cmd": "system::local::start_all_workers::cmd-exec::-m 20 plugin::./cmd-exec -migrx cmd-exec ::cmd-exec.log::5000",
+                    "num": 2
+                }
+            ],
+            "name": "start"
+        },
+        {
+            "cook": [
+                {
+                    "cmd": "system::local::stop_pool::cmd-exec",
+                    "num": 1
+                }
+            ],
+            "name": "stop"
+        }
+    ],
+    "start_scene": "start",
+    "version": 0
+}

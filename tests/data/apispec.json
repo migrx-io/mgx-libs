@@ -1,0 +1,1453 @@
+{
+    "cmd_docs": {
+        "aaa": "AAA - a subsystem that manages and stores information about users, access rights of objects, events and the calculation of resource checksums on the cluster\n\n  aaa\n   namespace\n    del - Delete namespace (Virtual DC) from Cluster \n\n  aaa\n   namespace\n    add - Add new namespace (Virtual DC) to Cluster \n\n  aaa\n   namespace\n    list - List namespaces (Virtual DC) from Cluster \n\n  aaa\n   namespace\n    show - Show namespace (Virtual DC) from Cluster \n\n  aaa\n   user\n    del - Delete user\n\n  aaa\n   user\n    add - Add new user\n\n  aaa\n   user\n    update - Update user\n\n  aaa\n   user\n    list - List users\n\n  aaa\n   user\n    show - Show user\n\n  aaa\n   param\n    del - Delete AAA params\n\n  aaa\n   param\n    add - Add AAA params\n\n  aaa\n   param\n    show - Show AAA params\n\n  aaa\n   param\n    update - Update AAA params\n\n  aaa\n   role\n    del - Delete role\n\n  aaa\n   role\n    add - Add new role\n\n  aaa\n   role\n    update - Update role\n\n  aaa\n   role\n    list - List roles\n\n  aaa\n   role\n    show - Show role\n",
+        "cluster": "API for Core cluster 2.0.0\n  cluster\n   list - Get clusters list\n\n  cluster\n   freenodes\n    list - Get free nodes list\n\n  cluster\n   metrics\n    list - Get metrics\n\n  cluster\n   repo\n    list - Get plugin list\n\n  cluster\n   add - Create new Cluster\n\n  cluster\n   nodes\n    update - Modify Cluster node\n\n  cluster\n   plugins\n    list - Get clusters plugin list\n\n  cluster\n   plugins\n    add - Start plugin\n\n  cluster\n   repo\n    plugins\n     list - Get clusters plugin list\n\n  cluster\n   repo\n    plugins\n     add - Plugin install\n\n  cluster\n   service\n    update - Update service conf\n\n  cluster\n   version\n    list - Get cluster version\n\n  cluster\n   vip\n    add - Change Cluster Service\n"
+    },
+    "cmd_map": {
+        "aaa": {
+            "namespace": {
+                "add": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "namespace_add"
+                        ]
+                    ],
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "descr": {
+                            "descr": "Namespace description"
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        },
+                        "paths": {
+                            "desc": "Directory tree as JSON object",
+                            "type": "jsonstr"
+                        }
+                    },
+                    "Add new namespace (Virtual DC) to Cluster ",
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "descr": {
+                            "descr": "Namespace description"
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        },
+                        "paths": {
+                            "desc": "Directory tree as JSON object",
+                            "type": "jsonstr"
+                        }
+                    }
+                ],
+                "del": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "namespace_del"
+                        ]
+                    ],
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        }
+                    },
+                    "Delete namespace (Virtual DC) from Cluster ",
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "descr": {
+                            "descr": "Namespace description"
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        },
+                        "paths": {
+                            "desc": "Directory tree as JSON object",
+                            "type": "jsonstr"
+                        }
+                    }
+                ],
+                "list": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "namespace_list"
+                        ]
+                    ],
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        }
+                    },
+                    "List namespaces (Virtual DC) from Cluster ",
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "descr": {
+                            "descr": "Namespace description"
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        },
+                        "paths": {
+                            "desc": "Directory tree as JSON object",
+                            "type": "jsonstr"
+                        }
+                    }
+                ],
+                "show": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "namespace_show"
+                        ]
+                    ],
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        }
+                    },
+                    "Show namespace (Virtual DC) from Cluster ",
+                    {
+                        "cluster": {
+                            "desc": "Cluster name",
+                            "required": true
+                        },
+                        "descr": {
+                            "descr": "Namespace description"
+                        },
+                        "ns": {
+                            "desc": "Namespace name",
+                            "required": true
+                        },
+                        "paths": {
+                            "desc": "Directory tree as JSON object",
+                            "type": "jsonstr"
+                        }
+                    }
+                ]
+            },
+            "param": {
+                "add": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "param_add"
+                        ]
+                    ],
+                    {
+                        "acc_block_try_cnt": {
+                            "desc": "Try login count before suspend (default - 3)",
+                            "type": "int"
+                        },
+                        "acc_block_try_suspend_sec": {
+                            "desc": "Try login suspend timeout (default - 60 min)",
+                            "type": "int"
+                        },
+                        "acc_block_try_timeout_sec": {
+                            "desc": "Try login interval counting (default - 5 min)",
+                            "type": "int"
+                        },
+                        "acc_block_unused_days": {
+                            "desc": "Days after block unused account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "acc_delete_days": {
+                            "desc": "Days after completly delete account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "auth_type": {
+                            "choices": [
+                                "BASIC",
+                                "TFA"
+                            ],
+                            "default": "BASIC",
+                            "desc": "Auth type (default - BASIC)"
+                        },
+                        "ldap": {
+                            "desc": "LDAP config name"
+                        },
+                        "ldap_sync": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Sync data from LDAP server (default - no)"
+                        },
+                        "password_diff_cnt": {
+                            "desc": "Password difference count char (default - 4)",
+                            "type": "int"
+                        },
+                        "password_exp_days": {
+                            "desc": "Password expiration period (default - 60 days)",
+                            "type": "int"
+                        },
+                        "password_pattern": {
+                            "desc": "Password regexp pattern (default - min 8 + UpperCase + LowerCase + Number + Spec char )"
+                        },
+                        "password_salt": {
+                            "desc": "Additional password salt (default - empty)"
+                        },
+                        "sessions_max_cnt": {
+                            "desc": "Max number of user sessions (default - 2)",
+                            "type": "int"
+                        },
+                        "sessions_timeout_sec": {
+                            "desc": "Session timeout (default - 3 min)",
+                            "type": "int"
+                        },
+                        "tfa_client": {
+                            "choices": [
+                                "EMAIL",
+                                "OTP"
+                            ],
+                            "default": "EMAIL",
+                            "desc": "TFA Client factor (default - EMAIL)"
+                        },
+                        "tfa_wait_sec": {
+                            "desc": "TFA timeout (default - 1 min)"
+                        },
+                        "validation_ip": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Check client network adress (default - no)"
+                        }
+                    },
+                    "Add AAA params",
+                    {
+                        "acc_block_try_cnt": {
+                            "desc": "Try login count before suspend (default - 3)",
+                            "type": "int"
+                        },
+                        "acc_block_try_suspend_sec": {
+                            "desc": "Try login suspend timeout (default - 60 min)",
+                            "type": "int"
+                        },
+                        "acc_block_try_timeout_sec": {
+                            "desc": "Try login interval counting (default - 5 min)",
+                            "type": "int"
+                        },
+                        "acc_block_unused_days": {
+                            "desc": "Days after block unused account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "acc_delete_days": {
+                            "desc": "Days after completly delete account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "auth_type": {
+                            "choices": [
+                                "BASIC",
+                                "TFA"
+                            ],
+                            "default": "BASIC",
+                            "desc": "Auth type (default - BASIC)"
+                        },
+                        "ldap": {
+                            "desc": "LDAP config name"
+                        },
+                        "ldap_sync": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Sync data from LDAP server (default - no)"
+                        },
+                        "password_diff_cnt": {
+                            "desc": "Password difference count char (default - 4)",
+                            "type": "int"
+                        },
+                        "password_exp_days": {
+                            "desc": "Password expiration period (default - 60 days)",
+                            "type": "int"
+                        },
+                        "password_pattern": {
+                            "desc": "Password regexp pattern (default - min 8 + UpperCase + LowerCase + Number + Spec char )"
+                        },
+                        "password_salt": {
+                            "desc": "Additional password salt (default - empty)"
+                        },
+                        "sessions_max_cnt": {
+                            "desc": "Max number of user sessions (default - 2)",
+                            "type": "int"
+                        },
+                        "sessions_timeout_sec": {
+                            "desc": "Session timeout (default - 3 min)",
+                            "type": "int"
+                        },
+                        "tfa_client": {
+                            "choices": [
+                                "EMAIL",
+                                "OTP"
+                            ],
+                            "default": "EMAIL",
+                            "desc": "TFA Client factor (default - EMAIL)"
+                        },
+                        "tfa_wait_sec": {
+                            "desc": "TFA timeout (default - 1 min)"
+                        },
+                        "validation_ip": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Check client network adress (default - no)"
+                        }
+                    }
+                ],
+                "del": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "param_del"
+                        ]
+                    ],
+                    {},
+                    "Delete AAA params",
+                    {
+                        "acc_block_try_cnt": {
+                            "desc": "Try login count before suspend (default - 3)",
+                            "type": "int"
+                        },
+                        "acc_block_try_suspend_sec": {
+                            "desc": "Try login suspend timeout (default - 60 min)",
+                            "type": "int"
+                        },
+                        "acc_block_try_timeout_sec": {
+                            "desc": "Try login interval counting (default - 5 min)",
+                            "type": "int"
+                        },
+                        "acc_block_unused_days": {
+                            "desc": "Days after block unused account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "acc_delete_days": {
+                            "desc": "Days after completly delete account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "auth_type": {
+                            "choices": [
+                                "BASIC",
+                                "TFA"
+                            ],
+                            "default": "BASIC",
+                            "desc": "Auth type (default - BASIC)"
+                        },
+                        "ldap": {
+                            "desc": "LDAP config name"
+                        },
+                        "ldap_sync": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Sync data from LDAP server (default - no)"
+                        },
+                        "password_diff_cnt": {
+                            "desc": "Password difference count char (default - 4)",
+                            "type": "int"
+                        },
+                        "password_exp_days": {
+                            "desc": "Password expiration period (default - 60 days)",
+                            "type": "int"
+                        },
+                        "password_pattern": {
+                            "desc": "Password regexp pattern (default - min 8 + UpperCase + LowerCase + Number + Spec char )"
+                        },
+                        "password_salt": {
+                            "desc": "Additional password salt (default - empty)"
+                        },
+                        "sessions_max_cnt": {
+                            "desc": "Max number of user sessions (default - 2)",
+                            "type": "int"
+                        },
+                        "sessions_timeout_sec": {
+                            "desc": "Session timeout (default - 3 min)",
+                            "type": "int"
+                        },
+                        "tfa_client": {
+                            "choices": [
+                                "EMAIL",
+                                "OTP"
+                            ],
+                            "default": "EMAIL",
+                            "desc": "TFA Client factor (default - EMAIL)"
+                        },
+                        "tfa_wait_sec": {
+                            "desc": "TFA timeout (default - 1 min)"
+                        },
+                        "validation_ip": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Check client network adress (default - no)"
+                        }
+                    }
+                ],
+                "show": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "param_show"
+                        ]
+                    ],
+                    {},
+                    "Show AAA params",
+                    {
+                        "acc_block_try_cnt": {
+                            "desc": "Try login count before suspend (default - 3)",
+                            "type": "int"
+                        },
+                        "acc_block_try_suspend_sec": {
+                            "desc": "Try login suspend timeout (default - 60 min)",
+                            "type": "int"
+                        },
+                        "acc_block_try_timeout_sec": {
+                            "desc": "Try login interval counting (default - 5 min)",
+                            "type": "int"
+                        },
+                        "acc_block_unused_days": {
+                            "desc": "Days after block unused account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "acc_delete_days": {
+                            "desc": "Days after completly delete account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "auth_type": {
+                            "choices": [
+                                "BASIC",
+                                "TFA"
+                            ],
+                            "default": "BASIC",
+                            "desc": "Auth type (default - BASIC)"
+                        },
+                        "ldap": {
+                            "desc": "LDAP config name"
+                        },
+                        "ldap_sync": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Sync data from LDAP server (default - no)"
+                        },
+                        "password_diff_cnt": {
+                            "desc": "Password difference count char (default - 4)",
+                            "type": "int"
+                        },
+                        "password_exp_days": {
+                            "desc": "Password expiration period (default - 60 days)",
+                            "type": "int"
+                        },
+                        "password_pattern": {
+                            "desc": "Password regexp pattern (default - min 8 + UpperCase + LowerCase + Number + Spec char )"
+                        },
+                        "password_salt": {
+                            "desc": "Additional password salt (default - empty)"
+                        },
+                        "sessions_max_cnt": {
+                            "desc": "Max number of user sessions (default - 2)",
+                            "type": "int"
+                        },
+                        "sessions_timeout_sec": {
+                            "desc": "Session timeout (default - 3 min)",
+                            "type": "int"
+                        },
+                        "tfa_client": {
+                            "choices": [
+                                "EMAIL",
+                                "OTP"
+                            ],
+                            "default": "EMAIL",
+                            "desc": "TFA Client factor (default - EMAIL)"
+                        },
+                        "tfa_wait_sec": {
+                            "desc": "TFA timeout (default - 1 min)"
+                        },
+                        "validation_ip": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Check client network adress (default - no)"
+                        }
+                    }
+                ],
+                "update": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "param_update"
+                        ]
+                    ],
+                    {
+                        "acc_block_try_cnt": {
+                            "desc": "Try login count before suspend (default - 3)",
+                            "type": "int"
+                        },
+                        "acc_block_try_suspend_sec": {
+                            "desc": "Try login suspend timeout (default - 60 min)",
+                            "type": "int"
+                        },
+                        "acc_block_try_timeout_sec": {
+                            "desc": "Try login interval counting (default - 5 min)",
+                            "type": "int"
+                        },
+                        "acc_block_unused_days": {
+                            "desc": "Days after block unused account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "acc_delete_days": {
+                            "desc": "Days after completly delete account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "auth_type": {
+                            "choices": [
+                                "BASIC",
+                                "TFA"
+                            ],
+                            "default": "BASIC",
+                            "desc": "Auth type (default - BASIC)"
+                        },
+                        "ldap": {
+                            "desc": "LDAP config name"
+                        },
+                        "ldap_sync": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Sync data from LDAP server (default - no)"
+                        },
+                        "password_diff_cnt": {
+                            "desc": "Password difference count char (default - 4)",
+                            "type": "int"
+                        },
+                        "password_exp_days": {
+                            "desc": "Password expiration period (default - 60 days)",
+                            "type": "int"
+                        },
+                        "password_pattern": {
+                            "desc": "Password regexp pattern (default - min 8 + UpperCase + LowerCase + Number + Spec char )"
+                        },
+                        "password_salt": {
+                            "desc": "Additional password salt (default - empty)"
+                        },
+                        "sessions_max_cnt": {
+                            "desc": "Max number of user sessions (default - 2)",
+                            "type": "int"
+                        },
+                        "sessions_timeout_sec": {
+                            "desc": "Session timeout (default - 3 min)",
+                            "type": "int"
+                        },
+                        "tfa_client": {
+                            "choices": [
+                                "EMAIL",
+                                "OTP"
+                            ],
+                            "default": "EMAIL",
+                            "desc": "TFA Client factor (default - EMAIL)"
+                        },
+                        "tfa_wait_sec": {
+                            "desc": "TFA timeout (default - 1 min)"
+                        },
+                        "validation_ip": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Check client network adress (default - no)"
+                        }
+                    },
+                    "Update AAA params",
+                    {
+                        "acc_block_try_cnt": {
+                            "desc": "Try login count before suspend (default - 3)",
+                            "type": "int"
+                        },
+                        "acc_block_try_suspend_sec": {
+                            "desc": "Try login suspend timeout (default - 60 min)",
+                            "type": "int"
+                        },
+                        "acc_block_try_timeout_sec": {
+                            "desc": "Try login interval counting (default - 5 min)",
+                            "type": "int"
+                        },
+                        "acc_block_unused_days": {
+                            "desc": "Days after block unused account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "acc_delete_days": {
+                            "desc": "Days after completly delete account (default - 45 days)",
+                            "type": "int"
+                        },
+                        "auth_type": {
+                            "choices": [
+                                "BASIC",
+                                "TFA"
+                            ],
+                            "default": "BASIC",
+                            "desc": "Auth type (default - BASIC)"
+                        },
+                        "ldap": {
+                            "desc": "LDAP config name"
+                        },
+                        "ldap_sync": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Sync data from LDAP server (default - no)"
+                        },
+                        "password_diff_cnt": {
+                            "desc": "Password difference count char (default - 4)",
+                            "type": "int"
+                        },
+                        "password_exp_days": {
+                            "desc": "Password expiration period (default - 60 days)",
+                            "type": "int"
+                        },
+                        "password_pattern": {
+                            "desc": "Password regexp pattern (default - min 8 + UpperCase + LowerCase + Number + Spec char )"
+                        },
+                        "password_salt": {
+                            "desc": "Additional password salt (default - empty)"
+                        },
+                        "sessions_max_cnt": {
+                            "desc": "Max number of user sessions (default - 2)",
+                            "type": "int"
+                        },
+                        "sessions_timeout_sec": {
+                            "desc": "Session timeout (default - 3 min)",
+                            "type": "int"
+                        },
+                        "tfa_client": {
+                            "choices": [
+                                "EMAIL",
+                                "OTP"
+                            ],
+                            "default": "EMAIL",
+                            "desc": "TFA Client factor (default - EMAIL)"
+                        },
+                        "tfa_wait_sec": {
+                            "desc": "TFA timeout (default - 1 min)"
+                        },
+                        "validation_ip": {
+                            "choices": [
+                                "yes",
+                                "no"
+                            ],
+                            "default": "no",
+                            "desc": "Check client network adress (default - no)"
+                        }
+                    }
+                ]
+            },
+            "role": {
+                "add": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "role_add"
+                        ]
+                    ],
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    },
+                    "Add new role",
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    }
+                ],
+                "del": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "role_del"
+                        ]
+                    ],
+                    {
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    },
+                    "Delete role",
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    }
+                ],
+                "list": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "role_list"
+                        ]
+                    ],
+                    {},
+                    "List roles",
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    }
+                ],
+                "show": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "role_show"
+                        ]
+                    ],
+                    {
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    },
+                    "Show role",
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    }
+                ],
+                "update": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "role_update"
+                        ]
+                    ],
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    },
+                    "Update role",
+                    {
+                        "descr": {
+                            "descr": "Role description"
+                        },
+                        "perm_groups": {
+                            "desc": "Permission groups",
+                            "nargs": "*"
+                        },
+                        "role": {
+                            "desc": "Role name",
+                            "required": true
+                        }
+                    }
+                ]
+            },
+            "user": {
+                "add": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "user_add"
+                        ]
+                    ],
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "path": {
+                            "desc": "User path",
+                            "required": true,
+                            "type": "path"
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    },
+                    "Add new user",
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "path": {
+                            "desc": "User path",
+                            "required": true,
+                            "type": "path"
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    }
+                ],
+                "del": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "user_del"
+                        ]
+                    ],
+                    {
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        }
+                    },
+                    "Delete user",
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "path": {
+                            "desc": "User path",
+                            "required": true,
+                            "type": "path"
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    }
+                ],
+                "list": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "user_list"
+                        ]
+                    ],
+                    {},
+                    "List users",
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "path": {
+                            "desc": "User path",
+                            "required": true,
+                            "type": "path"
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    }
+                ],
+                "show": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "user_show"
+                        ]
+                    ],
+                    {
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        }
+                    },
+                    "Show user",
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "path": {
+                            "desc": "User path",
+                            "required": true,
+                            "type": "path"
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    }
+                ],
+                "update": [
+                    [
+                        "PLUGIN",
+                        [
+                            "aaa",
+                            "user_update"
+                        ]
+                    ],
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    },
+                    "Update user",
+                    {
+                        "checksum_profile": {
+                            "desc": "User checksum profile"
+                        },
+                        "descr": {
+                            "descr": "User description"
+                        },
+                        "email": {
+                            "desc": "User email",
+                            "required": true,
+                            "type": "email"
+                        },
+                        "login": {
+                            "desc": "User login",
+                            "required": true
+                        },
+                        "path": {
+                            "desc": "User path",
+                            "required": true,
+                            "type": "path"
+                        },
+                        "roles": {
+                            "desc": "User roles",
+                            "nargs": "*"
+                        },
+                        "whitelist_networks": {
+                            "desc": "List of white networks",
+                            "nargs": "*",
+                            "type": "ipv4network"
+                        }
+                    }
+                ]
+            }
+        },
+        "cluster": {
+            "add": [
+                [
+                    "POST",
+                    "/cluster/{cluster}"
+                ],
+                {
+                    "cluster": {
+                        "required": false
+                    },
+                    "node_ids": {
+                        "nargs": "*",
+                        "required": true
+                    },
+                    "vip": {
+                        "required": true
+                    }
+                },
+                "Create new Cluster"
+            ],
+            "del": [
+                [
+                    "DELETE",
+                    "/cluster/{cluster}"
+                ],
+                {
+                    "cluster": {
+                        "required": false
+                    }
+                },
+                "Delete Cluster"
+            ],
+            "freenodes": {
+                "del": [
+                    [
+                        "DELETE",
+                        "/cluster/freenodes"
+                    ],
+                    {},
+                    "Delete free node list"
+                ],
+                "list": [
+                    [
+                        "GET",
+                        "/cluster/freenodes"
+                    ],
+                    {},
+                    "Get free nodes list"
+                ]
+            },
+            "list": [
+                [
+                    "GET",
+                    "/cluster"
+                ],
+                {},
+                "Get clusters list"
+            ],
+            "metrics": {
+                "list": [
+                    [
+                        "GET",
+                        "/cluster/metrics"
+                    ],
+                    {},
+                    "Get metrics"
+                ]
+            },
+            "nodes": {
+                "list": [
+                    [
+                        "GET",
+                        "/cluster/{cluster}/nodes"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        }
+                    },
+                    "Get clusters node list"
+                ],
+                "update": [
+                    [
+                        "PUT",
+                        "/cluster/{cluster}/nodes"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "node_id": {
+                            "required": true,
+                            "type": "int"
+                        },
+                        "op": {
+                            "choices": [
+                                "add",
+                                "del",
+                                "start",
+                                "stop"
+                            ],
+                            "required": true
+                        }
+                    },
+                    "Modify Cluster node"
+                ]
+            },
+            "plugins": {
+                "add": [
+                    [
+                        "POST",
+                        "/cluster/{cluster}/plugins/{plugin}"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "plugin": {
+                            "required": true
+                        }
+                    },
+                    "Start plugin"
+                ],
+                "del": [
+                    [
+                        "DELETE",
+                        "/cluster/{cluster}/plugins/{plugin}"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "plugin": {
+                            "required": true
+                        }
+                    },
+                    "Stop plugin"
+                ],
+                "list": [
+                    [
+                        "GET",
+                        "/cluster/{cluster}/plugins"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        }
+                    },
+                    "Get clusters plugin list"
+                ],
+                "show": [
+                    [
+                        "GET",
+                        "/cluster/{cluster}/plugins/{plugin}"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "plugin": {
+                            "required": true
+                        }
+                    },
+                    "Get plugin desc"
+                ]
+            },
+            "repo": {
+                "list": [
+                    [
+                        "GET",
+                        "/cluster/repo"
+                    ],
+                    {},
+                    "Get plugin list"
+                ],
+                "plugins": {
+                    "add": [
+                        [
+                            "POST",
+                            "/cluster/{cluster}/repo/plugins/{plugin}"
+                        ],
+                        {
+                            "cluster": {
+                                "required": false
+                            },
+                            "plugin": {
+                                "required": true
+                            }
+                        },
+                        "Plugin install"
+                    ],
+                    "del": [
+                        [
+                            "DELETE",
+                            "/cluster/{cluster}/repo/plugins/{plugin}"
+                        ],
+                        {
+                            "cluster": {
+                                "required": false
+                            },
+                            "plugin": {
+                                "required": true
+                            }
+                        },
+                        "Plugin uninstall"
+                    ],
+                    "list": [
+                        [
+                            "GET",
+                            "/cluster/{cluster}/repo/plugins"
+                        ],
+                        {
+                            "cluster": {
+                                "required": false
+                            }
+                        },
+                        "Get clusters plugin list"
+                    ]
+                }
+            },
+            "service": {
+                "add": [
+                    [
+                        "POST",
+                        "/cluster/{cluster}/service/{service}"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "service": {
+                            "required": true
+                        }
+                    },
+                    "Start service"
+                ],
+                "del": [
+                    [
+                        "DELETE",
+                        "/cluster/{cluster}/service/{service}"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "service": {
+                            "required": true
+                        }
+                    },
+                    "Stop service"
+                ],
+                "show": [
+                    [
+                        "GET",
+                        "/cluster/{cluster}/service/{service}"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "service": {
+                            "required": true
+                        }
+                    },
+                    "Get service status"
+                ],
+                "update": [
+                    [
+                        "PUT",
+                        "/cluster/{cluster}/service/{service}"
+                    ],
+                    {
+                        "check": {
+                            "required": true
+                        },
+                        "cluster": {
+                            "required": false
+                        },
+                        "code": {
+                            "required": true,
+                            "type": "int"
+                        },
+                        "service": {
+                            "required": true
+                        }
+                    },
+                    "Update service conf"
+                ]
+            },
+            "version": {
+                "list": [
+                    [
+                        "GET",
+                        "/cluster/{cluster}/version"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        }
+                    },
+                    "Get cluster version"
+                ]
+            },
+            "vip": {
+                "add": [
+                    [
+                        "POST",
+                        "/cluster/{cluster}/vip"
+                    ],
+                    {
+                        "cluster": {
+                            "required": false
+                        },
+                        "vip": {
+                            "required": true
+                        }
+                    },
+                    "Change Cluster Service"
+                ]
+            }
+        }
+    }
+}

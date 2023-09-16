@@ -1,0 +1,10 @@
+rawstring without op
+1
+{}
+{"data": "sting in json data"}
+{"context": {"op": "simple", "id": 1}, "data": "simple request"}
+{"context": {"op": "sleep", "id": 2}, "data": "sleep request"}
+{"context": {"id": 1}, "data": "simple request wihout op"}
+{"context": {"id": 2}, "data": "sleep request without op"}
+{"context": {"op": "simple", "id": 1}, "data": {"x": 1}}
+

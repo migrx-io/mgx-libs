@@ -1,0 +1,10 @@
+{"context": {}, "error": "Expecting value: line 1 column 1 (char 0)"}
+{"context": {}, "error": "invalid operation: None"}
+{"context": {}, "error": "invalid operation: None"}
+{"context": {}, "error": "invalid operation: None"}
+{"context": {"op": "simple", "id": 1}, "data": "simple:{'db': 'db'}:simple request"}
+{"context": {"op": "sleep", "id": 2}, "data": "sleep:{'db': 'db'}:sleep request"}
+{"context": {"id": 1}, "error": "invalid operation: None"}
+{"context": {"id": 2}, "error": "invalid operation: None"}
+{"context": {"op": "simple", "id": 1}, "data": "simple:{'db': 'db'}:{'x': 1}"}
+

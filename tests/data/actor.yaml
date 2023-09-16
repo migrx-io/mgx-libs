@@ -1,0 +1,47 @@
+desc: | 
+  This is example module 
+
+  You need to put here description and main fuctionality description
+
+ops:
+  echo:
+    desc: |
+      Example method do add
+
+      Here we can describe command description
+
+    request:
+      meta:
+        name:
+          required: true
+        id:
+          required: true
+          type: "int"
+          choices: [1, 2, 3]
+        prefix:
+          default: "example"
+        email:
+          type: "email"
+        ids:
+          nargs: "*"
+
+      examples: [{"name": "example", "id": 1, "prefix": "test"},
+                 {"error": 1},
+                 {"error": 1, "name": "exanple", "id": 2},
+                 {"name": "exanple", "id": 10},
+                 {"name": "example", "id": 1, "email": "asda"},
+                 {"name": "example", "id": 1, "email": "main@main.com"},
+                 {"name": "example", "id": 1, "ids": "1"},
+
+
+                ]
+
+    response:
+      examples: [{"name": "example", "id": 1, "prefix": "test"}, 
+                 {"error": "value name is required"},
+                 {"error": "error occured!"},
+                 {"error": "value id not in [1, 2, 3]"},
+                 {"error": "Invalid email format"},
+                 {"name": "example", "id": 1, "email": "main@main.com"},
+                 {"error": "value ids not list"},
+                ]

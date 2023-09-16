@@ -1,0 +1,33 @@
+desc: | 
+  This is example module 
+
+  You need to put here description and main fuctionality description
+
+ops:
+  echo:
+    desc: |
+      Example method do add
+
+      Here we can describe command description
+
+    request:
+      meta:
+        name:
+          required: true
+        id:
+          required: true
+          type: "int"
+          choices: [1, 2, 3]
+        prefix:
+          default: "example"
+        email:
+          type: "email"
+        ids:
+          nargs: "*"
+
+      examples: [{"name": "example", "id": 1, "prefix": "test"}
+                ]
+
+    response:
+      examples: [{"desc": "This is example module \n\nYou need to put here description and main fuctionality description\n", "ops": {"echo": {"desc": "Example method do add\n\nHere we can describe command description\n", "request": {"meta": {"name": {"required": true}, "id": {"required": true, "type": "int", "choices": [1, 2, 3]}, "prefix": {"default": "example"}, "email": {"type": "email"}, "ids": {"nargs": "*"}}, "examples": [{"name": "example", "id": 1, "prefix": "test"}]}, "response": {"examples": [{"desc": "This is example module \n\nYou need to put here description and main fuctionality description\n", "ops": {"echo": {"desc": "Example method do add\n\nHere we can describe command description\n", "request": {"meta": {"name": {"required": true}, "id": {"required": true, "type": "int", "choices": [1, 2, 3]}, "prefix": {"default": "example"}, "email": {"type": "email"}, "ids": {"nargs": "*"}}, "examples": [{"name": "example", "id": 1, "prefix": "test"}]}, "response": {"examples": [{"desc": "This is example module \n\nYou need to put here description and main fuctionality description\n", "ops": {"echo": {"desc": "Example method do add\n\nHere we can describe command description\n", "request": {"meta": {"name": {"required": true}, "id": {"required": true, "type": "int", "choices": [1, 2, 3]}, "prefix": {"default": "example"}, "email": {"type": "email"}, "ids": {"nargs": "*"}}, "examples": [{"name": "example", "id": 1, "prefix": "test"}]}, "response": {"examples": [{"name": "example", "id": 1, "prefix": "test"}]}}}}]}}}}]}}}}]
+

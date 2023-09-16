@@ -1,0 +1,93 @@
+desc: | 
+  AAA - a subsystem that manages and stores information about users, access rights of objects, events and the calculation of resource checksums on the cluster
+
+models:
+  Permission:
+    type:
+       required: true
+       desc: "Permission type"
+       choices: ["cluster", "plugin"]
+
+  Namespace:
+    type:
+      cluster:
+        required: true
+        desc: "Cluster name"
+      name:
+        required: true
+        desc: "Namespace Name"
+      spec:
+        required: true
+        desc: "Path to file or http link"
+        type: "file"
+
+ops:
+
+  permission_show:
+    desc: |
+      Describe/show all avaliable permissions
+
+    model: Permission
+
+    request:
+      meta:
+        type: "${type}"
+
+      examples: [{"type": "cluster"},
+                ]
+
+    response:
+      examples: ["ok",
+                ]
+
+  namespace_add:
+    desc: |
+      Add new namespace (Virtual DC) to Cluster 
+
+    model: Namespace
+
+    request:
+      meta:
+        cluster: "${cluster}"
+        name: "${name}"
+        spec: "${spec}"
+
+      examples: [{"cluster": "main", "name": "ns1", "spec": "./ns1.yaml"},
+                ]
+
+    response:
+      examples: ["ok", 
+                ]
+
+  namespace_del:
+    desc: |
+      Delete namespace (Virtual DC) from Cluster 
+
+    request:
+      meta:
+        cluster: "${Namespace.cluster}"
+        name: "${Namespace.name}"
+
+      examples: [{"cluster": "main", "name": "ns1"},
+                ]
+
+    response:
+      examples: ["ok", 
+                ]
+
+  namespace_list:
+    desc: |
+      List namespaces (Virtual DC) from Cluster 
+
+    request:
+      meta:
+        cluster:
+          required: true
+          desc: "Cluster name"
+
+      examples: [{"cluster": "main"},
+                ]
+
+    response:
+      examples: [["ns1", "ns2"]]
+
