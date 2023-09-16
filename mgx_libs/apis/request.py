@@ -166,7 +166,7 @@ class Request():
 
 class Context:
 
-    def __init__(self, typ="mgx", **kwargs):
+    def __init__(self, typ="MGX", **kwargs):
 
         self.env = Env().envs
 
@@ -206,7 +206,7 @@ class Context:
         self.async_endpoint = kwargs.get("async_endpoint")
 
         # async pool by default
-        if typ == "mgx":
+        if typ == "MGX":
             if self.async_endpoint is None:
                 self.async_endpoint = True
         else:

@@ -44,7 +44,7 @@ def get_models():
 
     for _, modname, _ in pkgutil.iter_modules(stores.__path__):
 
-        if modname in ["connection", "models", "aaaevents"]:
+        if modname in ["connection", "models"]:
             continue
 
         log.debug("import module %s", modname)

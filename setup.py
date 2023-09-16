@@ -10,8 +10,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "gevent==22.10.2", "requests==2.28.2", "eventlet==0.30.2",
-        "PyYAML==5.4.1", "lxml==4.9.2",
-        "click==7.1.2", "Flask==2.0.3",
+        "PyYAML==5.4.1", "lxml==4.9.2", "click==7.1.2", "Flask==2.0.3",
         "Flask-JWT-Extended==4.4.4","Jinja2==3.1.2",
         "psutil==5.9.4", "uWSGI==2.0.21", "websocket-client==1.4.2",
         "Werkzeug==2.2.2", "cassandra-driver==3.24.0",
