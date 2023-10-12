@@ -11,8 +11,6 @@ import json
 from mgx_libs.types.validation import open_spec, unwrap_reference
 import logging as log
 
-from mgx_libs.helpers.event import SYS_EVENTS
-
 CONTEXT_OPERATORS = [
     "In", "NotIn", "Contains", "NotContains", "InDict", "NotInDict",
     "StartsWith", "NotStartsWith"
@@ -609,9 +607,6 @@ class PermissionLoader():
     def desc_events(self, filtr=None):
 
         cmd_map = self.api_spec.get("cmd_map")
-
-        # add system events
-        cmd_map["system"] = {k: [None, None, v] for k, v in SYS_EVENTS.items()}
 
         if cmd_map is None:
             raise Exception("Spec not found")
