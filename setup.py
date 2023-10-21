@@ -20,7 +20,7 @@ setup(
         "pyotp==2.8.0", "flasgger==0.9.5", "pytest==7.2.1", "pylint==2.10.2",
         "allure-pytest==2.12.0", "cassandra-migrate==0.3.4", "yapf==0.32.0",
         "transitions==0.9.0", "dnspython==1.16.0",
-        "pbr==5.10.0", "tzlocal==4.3"
+        "pbr==5.10.0", "tzlocal==4.3", "pytz"
     ],
     classifiers=[
         'Intended Audience :: Migrx/Developers',
