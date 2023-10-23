@@ -3,10 +3,8 @@ Test cases for helpers
 
 """
 import allure
-import logging as log
 import os
 # import pytest
-import time
 
 from mgx_libs.helpers.passwd import Base64Passwd
 from mgx_libs.helpers.workers import ns_list_by_cluster
@@ -30,13 +28,7 @@ class TestCase():
         conn.init()
 
     def teardown_class(self):
-
-        gpg = GPG()
-
-        keys_before = gpg.list_sub_keys_fp()
-
-        for k in keys_before:
-            gpg.delete_sub_key(k)
+        pass
 
     def test_base64passwd(self):
 

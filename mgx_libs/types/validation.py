@@ -8,9 +8,7 @@ import yaml
 import re
 import os
 import logging as log
-import ipaddress
 import json
-import string
 
 from mgx_libs.helpers.memory import MEM_DIMS
 

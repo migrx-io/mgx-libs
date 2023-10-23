@@ -38,7 +38,7 @@
 
 
 """
-from datetime import datetime, timezone
+from datetime import datetime
 from cassandra.cqlengine import columns
 from cassandra.cqlengine.models import Model
 from cassandra.cqlengine.query import BatchQuery
@@ -47,9 +47,6 @@ import json
 from cassandra.cqlengine.query import LWTException
 from mgx_libs.apis.spec import evalExpression
 
-from mgx_libs.helpers.workers import notify
-
-import copy
 import pytz
 
 import logging as log
@@ -240,8 +237,6 @@ class BaseModel(Model):
         if not parse_perm_rules(cls.context, cls.__name__, kwargs):
             raise Exception("Not authorized (context rules)")
 
-        obj = None
-
         for p in cls.context["ctx_pathz"]:
 
             kwargs.update(cls.context)
@@ -251,9 +246,9 @@ class BaseModel(Model):
 
             try:
                 if ttl is not None:
-                    obj = cls.ttl(ttl).if_not_exists().create(**kwargs)
+                    cls.ttl(ttl).if_not_exists().create(**kwargs)
                 else:
-                    obj = cls.if_not_exists().create(**kwargs)
+                    cls.if_not_exists().create(**kwargs)
 
             except LWTException:
                 raise Exception("Object already exists")
