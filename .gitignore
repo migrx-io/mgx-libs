@@ -2,4 +2,4 @@ __pycache__
 *.pyc
 tests/data/test.db
 build/
-sdc_libs.egg-info/
+mgx_libs.egg-info/
