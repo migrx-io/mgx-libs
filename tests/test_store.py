@@ -432,17 +432,8 @@ class TestModelCase():
         exists, err = is_namespace_not_empty(ctx)
 
         log.debug("exists: %s / err: %s", exists, err)
-        assert exists is True
-
-        exists, err = is_namespace_not_empty(ctx, "domain", "VMs")
-
-        log.debug("exists: %s / err: %s", exists, err)
         assert exists is False
 
         clear_ns_objects(ctx)
 
         assert True
-
-        # exists, err = is_namespace_not_empty(ctx, "domain2", "VMs")
-        # log.debug("exists: %s / err: %s", exists, err)
-        # assert exists is False

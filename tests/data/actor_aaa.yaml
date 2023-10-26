@@ -42,7 +42,7 @@ ops:
 
   namespace_add:
     desc: |
-      Add new namespace (Virtual DC) to Cluster 
+      Add new namespace to Cluster 
 
     model: Namespace
 

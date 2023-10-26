@@ -1,6 +1,6 @@
 {
     "cmd_docs": {
-        "aaa": "AAA - a subsystem that manages and stores information about users, access rights of objects, events and the calculation of resource checksums on the cluster\n\n  aaa\n   namespace\n    del - Delete namespace (Virtual DC) from Cluster \n\n  aaa\n   namespace\n    add - Add new namespace (Virtual DC) to Cluster \n\n  aaa\n   namespace\n    list - List namespaces (Virtual DC) from Cluster \n\n  aaa\n   namespace\n    show - Show namespace (Virtual DC) from Cluster \n\n  aaa\n   user\n    del - Delete user\n\n  aaa\n   user\n    add - Add new user\n\n  aaa\n   user\n    update - Update user\n\n  aaa\n   user\n    list - List users\n\n  aaa\n   user\n    show - Show user\n\n  aaa\n   param\n    del - Delete AAA params\n\n  aaa\n   param\n    add - Add AAA params\n\n  aaa\n   param\n    show - Show AAA params\n\n  aaa\n   param\n    update - Update AAA params\n\n  aaa\n   role\n    del - Delete role\n\n  aaa\n   role\n    add - Add new role\n\n  aaa\n   role\n    update - Update role\n\n  aaa\n   role\n    list - List roles\n\n  aaa\n   role\n    show - Show role\n",
+        "aaa": "AAA - a subsystem that manages and stores information about users, access rights of objects, events and the calculation of resource checksums on the cluster\n\n  aaa\n   namespace\n    del - Delete namespace (Virtual DC) from Cluster \n\n  aaa\n   namespace\n    add - Add new namespace to Cluster \n\n  aaa\n   namespace\n    list - List namespaces (Virtual DC) from Cluster \n\n  aaa\n   namespace\n    show - Show namespace (Virtual DC) from Cluster \n\n  aaa\n   user\n    del - Delete user\n\n  aaa\n   user\n    add - Add new user\n\n  aaa\n   user\n    update - Update user\n\n  aaa\n   user\n    list - List users\n\n  aaa\n   user\n    show - Show user\n\n  aaa\n   param\n    del - Delete AAA params\n\n  aaa\n   param\n    add - Add AAA params\n\n  aaa\n   param\n    show - Show AAA params\n\n  aaa\n   param\n    update - Update AAA params\n\n  aaa\n   role\n    del - Delete role\n\n  aaa\n   role\n    add - Add new role\n\n  aaa\n   role\n    update - Update role\n\n  aaa\n   role\n    list - List roles\n\n  aaa\n   role\n    show - Show role\n",
         "cluster": "API for Core cluster 2.0.0\n  cluster\n   list - Get clusters list\n\n  cluster\n   freenodes\n    list - Get free nodes list\n\n  cluster\n   metrics\n    list - Get metrics\n\n  cluster\n   repo\n    list - Get plugin list\n\n  cluster\n   add - Create new Cluster\n\n  cluster\n   nodes\n    update - Modify Cluster node\n\n  cluster\n   plugins\n    list - Get clusters plugin list\n\n  cluster\n   plugins\n    add - Start plugin\n\n  cluster\n   repo\n    plugins\n     list - Get clusters plugin list\n\n  cluster\n   repo\n    plugins\n     add - Plugin install\n\n  cluster\n   service\n    update - Update service conf\n\n  cluster\n   version\n    list - Get cluster version\n\n  cluster\n   vip\n    add - Change Cluster Service\n"
     },
     "cmd_map": {
@@ -31,7 +31,7 @@
                             "type": "jsonstr"
                         }
                     },
-                    "Add new namespace (Virtual DC) to Cluster ",
+                    "Add new namespace to Cluster ",
                     {
                         "cluster": {
                             "desc": "Cluster name",

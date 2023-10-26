@@ -54,6 +54,8 @@ class TestAPIS():
         os.environ["MGX_IS_TLS"] = "n"
         os.environ["MGX_GW_IS_TLS"] = "n"
 
+        os.environ["MGX_GW_TMP"] = "./data/apispec.json"
+
         self.server = mock_server.run_test_server(8083)
         self.server.daemon = True
         self.server.start()
@@ -146,6 +148,8 @@ class TestAPIS():
 
     def test_event_operation(self):
 
+        os.environ["MGX_GW_TMP"] = "./tests/data/apispec.json"
+
         method = "GET"
         path = "/api/v1/cluster"
         data = b''
@@ -175,7 +179,7 @@ class TestAPIS():
 
         op = get_event_operation(method, path, data)
 
-        assert op == "Add new namespace (Virtual DC) to Cluster"
+        assert op == "Add new namespace to Cluster"
 
         method = "PUT"
         path = "/api/v1/cluster/main/plugins/aaa"

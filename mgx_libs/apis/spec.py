@@ -5,7 +5,7 @@ from mgx_libs.apis.request import (
 
 from mgx_libs.configs.flows import (
     Flow, )
-from mgx_libs.configs.env import Env, envs
+from mgx_libs.configs.env import Env
 import yaml
 import json
 from mgx_libs.types.validation import open_spec, unwrap_reference
@@ -105,12 +105,14 @@ def evalExpression(expr, data):
 
 def get_event_operation(method, path, data):
 
-    is_exists, cmd_map = open_spec(envs["MGX_GW_TMP"])
+    is_exists, cmd_map = open_spec(Env().envs["MGX_GW_TMP"])
 
     if not is_exists:
         return None
 
     cmd_map = cmd_map.get("cmd_map", {})
+
+    log.debug("get_event_operation: cmd_map: %s", cmd_map)
 
     verbs = []
 
