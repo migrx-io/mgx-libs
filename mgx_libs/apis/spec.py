@@ -354,7 +354,7 @@ class PluginSpec():
                 if spec[9:].find("-") >= 0:
                     continue
 
-                status, data = Request(Context("mgx")).call(
+                status, data = Request(Context("MGX")).call(
                     "/{}".format(spec[9:]), {
                         "context": {
                             "op": "get_actor_meta",
